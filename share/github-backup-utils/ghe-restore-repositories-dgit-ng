@@ -89,6 +89,7 @@ trap cleanup EXIT
 
 # Disable remote GC operations
 for hostname in $hostnames; do
+  echo " *** Disabling GC on $hostname"
   ghe-gc-disable -F $ssh_config_file $hostname:$port
 done
 

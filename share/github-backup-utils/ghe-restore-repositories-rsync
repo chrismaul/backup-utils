@@ -32,6 +32,7 @@ cleanup() {
 trap 'cleanup' INT TERM EXIT
 
 # Disable remote GC operations
+echo " *** Disabling GC on $GHE_HOSTNAME"
 ghe-gc-disable $GHE_HOSTNAME
 
 # Transfer all git repository data from the latest snapshot to the GitHub

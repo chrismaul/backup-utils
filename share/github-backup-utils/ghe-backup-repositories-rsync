@@ -65,6 +65,7 @@ trap 'cleanup' EXIT
 trap 'exit $?' INT # ^C always terminate
 
 # Disable remote GC operations
+echo " *** Disabling GC on $hostname"
 ghe-gc-disable $host
 
 # Transfer repository data from a GitHub instance to the current snapshot

@@ -42,6 +42,8 @@ echo "
             exit 0
         fi
     done
+    ps axo args | grep -E -e '^git( -.*)? nw-repac[k]( |$)' -e '^git( -.*)? g[c]( |$)'
+    ghe-resque-info
     exit 7
 " | ghe-ssh $opts "$host" -- /bin/bash || {
     res=$?
